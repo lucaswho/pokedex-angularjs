@@ -1,3 +1,8 @@
-<div class="text-center">
-  <h1>Pokédex using AngularJS</h1>
+<div class="content">
+  <h3>POKÉDEX</h3>
+  <ul class="flex-container">
+    <li class="flex-item" ng-repeat="item in [1, 2, 3, 4, 5, 6, 7, 8] track by $index">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/00{{$index + 1}}.png">
+    </li>
+  </ul>
 </div>

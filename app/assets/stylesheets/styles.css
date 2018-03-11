@@ -1,4 +1,35 @@
-h1 {
-  color: red; }
+h3 {
+  margin-bottom: -8px;
+  margin-left: 5px; }
+
+.content {
+  max-width: 1024px;
+  background-color: white;
+  padding: 54px 55px 20px 55px;
+  margin: auto; }
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around; }
+
+.flex-item {
+  background: #F2F1F1;
+  width: 216px;
+  height: 238px;
+  line-height: 238px;
+  margin-top: 60px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
