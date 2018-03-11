@@ -9,7 +9,7 @@ angular.module('myApp.home', ['ngRoute'])
     });
   }])
 
-  .controller('homeController', ['$http', function ($http) {
+  .controller('homeController', ['$window', '$http', '$rootScope', function ($window, $http, $rootScope) {
 
     var vm = this;
     vm.pokemonArray = [];
@@ -23,16 +23,21 @@ angular.module('myApp.home', ['ngRoute'])
           var data = response.data;
           vm.pokemonArray = data.results;
           angular.forEach(vm.pokemonArray, function (value, key) {
-            value.id = (key+1).pad(3);
+            value.id = (key + 1).pad(3);
             value.imageUrl = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' + value.id + '.png';
           });
         });
     }
 
-  }]);
+    vm.detailPokemon = function (pokemon) {
+      $rootScope.selectedPokemon = pokemon;
+      $window.location.href = "#!/pokemon";
+    }
 
-Number.prototype.pad = function (size) {
-  var s = String(this);
-  while (s.length < (size || 2)) { s = "0" + s; }
-  return s;
-}
+    Number.prototype.pad = function (size) {
+      var s = String(this);
+      while (s.length < (size || 2)) { s = "0" + s; }
+      return s;
+    }
+
+  }]);

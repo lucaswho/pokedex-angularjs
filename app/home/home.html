@@ -1,7 +1,7 @@
 <div class="content">
   <h3>POKÉDEX</h3>
   <ul class="flex-container">
-    <li class="flex-item" ng-repeat="pokemon in vm.pokemonArray track by $index">
+    <li class="flex-item" ng-click="vm.detailPokemon(pokemon)" ng-repeat="pokemon in vm.pokemonArray track by $index">
       <div class="name capitalize">#{{pokemon.id}} {{pokemon.name}}</div>
       <img class="image" ng-src="{{pokemon.imageUrl}}">
     </li>
