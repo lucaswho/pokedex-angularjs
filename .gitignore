@@ -6,3 +6,5 @@ package-lock.json
 tmp
 .DS_Store
 .idea
+styles.css.map
+.sass-cache
