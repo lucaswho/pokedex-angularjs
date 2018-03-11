@@ -9,19 +9,39 @@ angular.module('myApp.pokemon', ['ngRoute'])
     });
   }])
 
-  .controller('pokemonController', ['$http', '$rootScope', function ($http, $rootScope) {
+  .controller('pokemonController', ['$window', '$http', '$rootScope', function ($window, $http, $rootScope) {
 
     var vm = this;
-    // vm.selectedPokemon = $rootScope.selectedPokemon;
+    if ($rootScope.selectedPokemon) {
+      vm.selectedPokemon = $rootScope.selectedPokemon;
+      vm.selectedPokemon.imageUrl = vm.selectedPokemon.imageUrl.replace("detail", "full");
+    } else {
+      $window.location.href = "#!/home";
+    }
 
     //MOCK
-    vm.selectedPokemon = {
-      name: 'charmander',
-      id: '004',
-      url: 'https://pokeapi.co/api/v2/pokemon/4/',
-      imageUrl: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png'
-    };
-    vm.selectedPokemon.imageUrl = vm.selectedPokemon.imageUrl.replace("detail", "full");
+    vm.info = [
+      {
+        title: 'Height',
+        desc: '99 m'
+      },
+      {
+        title: 'Category',
+        desc: 'MOCK'
+      },
+      {
+        title: 'Weight',
+        desc: '99 kg'
+      },
+      {
+        title: 'Abilities',
+        desc: 'MOCK'
+      },
+      {
+        title: 'Gender',
+        desc: 'F/M'
+      },
+    ]
 
     getPokemonDetails();
 
@@ -30,8 +50,9 @@ angular.module('myApp.pokemon', ['ngRoute'])
       $http.get(vm.selectedPokemon.url, { cache: true })
         .then(function (response) {
           var data = response.data;
+          console.log(data);
+          vm.moves = data.moves;
         });
-
     }
 
   }]);

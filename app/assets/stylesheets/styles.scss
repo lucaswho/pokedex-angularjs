@@ -22,6 +22,7 @@ h3 {
   display: flex;
   
   -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
 
@@ -60,8 +61,57 @@ h3 {
   }
   .image-box {
     background: #F2F1F1;
-    padding: 25px;
+    padding: 60px;
     border-radius: 6px;
+  }
+  .summary {
+    padding-top: 25px;
+  }
+  .information-box {
+    background-color: #4a90ed;
+    border-radius: 6px;
+    .flex-container {
+      justify-content: flex-start;
+      padding-bottom: 30px;
+      .info {
+        min-width: 50%;
+        text-align: center;
+        margin-top: 30px;
+        .type {
+          color: white;
+          font-weight: bold;
+        }
+        .desc {
+
+        }
+      }
+    }
+  }
+  .moves-container {
+    .flex-container {
+      justify-content: space-between;
+      padding-bottom: 30px;
+    }
+    .move {
+      width: 212px;
+      height: 36px;
+      border-radius: 10px;
+      margin-top: 23px;
+      text-align: center;
+      line-height: 36px;
+      &:nth-of-type(4n+1) {
+        background: #4a90e2;
+      }
+      &:nth-of-type(4n+2) {
+        background: #d8d8d8;
+      }
+      &:nth-of-type(4n+3) {
+        background: #be93e7;
+      }
+      &:nth-of-type(4n+4) {
+        background: #a0da5e;
+      }
+    }
   }
 }
 

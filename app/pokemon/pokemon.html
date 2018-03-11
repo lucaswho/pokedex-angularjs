@@ -1,12 +1,29 @@
 <div class="content pokemon-details">
   <h3 class="title capitalize">#{{vm.selectedPokemon.id}} {{vm.selectedPokemon.name}}</h3>
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-7">
       <div class="image-box">
         <img ng-src="{{vm.selectedPokemon.imageUrl}}">
       </div>
+      <div class="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-5">
+      <div class="information-box">
+        <ul class="flex-container">
+          <li class="info" ng-repeat="info in vm.info">
+            <div class="type">{{info.title}}</div>
+            <div class="desc">{{info.desc}}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 moves-container">
+      <ul class="flex-container">
+        <li class="move capitalize" ng-repeat="item in vm.moves track by $index" ng-if="$index <= 19">{{item.move.name}}</li>
+      </ul>
     </div>
   </div>
 </div>
