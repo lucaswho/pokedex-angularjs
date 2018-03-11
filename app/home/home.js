@@ -18,7 +18,7 @@ angular.module('myApp.home', ['ngRoute'])
 
     function getPokemon() {
 
-      $http.get("https://pokeapi.co/api/v2/pokemon/?limit=12&offset=0")
+      $http.get("https://pokeapi.co/api/v2/pokemon/?limit=12&offset=0", { cache: true})
         .then(function (response) {
           var data = response.data;
           vm.pokemonArray = data.results;

@@ -40,7 +40,19 @@ h3 {
     top: -10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
 
+.pokemon-details .title {
+  text-align: center;
+  padding-bottom: 32px; }
+.pokemon-details .image-box {
+  background: #F2F1F1;
+  padding: 25px;
+  border-radius: 6px; }
+
 .capitalize {
   text-transform: capitalize; }
+
+img {
+  width: 100%;
+  height: auto; }
 
 /*# sourceMappingURL=styles.css.map */
